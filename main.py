@@ -1,3 +1,8 @@
+'''
+python 3.8
+pyqt5
+'''
+
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from module_main_page.module_main_page_logic import module_main_page_logic
