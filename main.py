@@ -4,6 +4,7 @@ pyqt5
 '''
 
 import sys
+from PyQt5.Qt import *
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from module_main_page.module_main_page_logic import module_main_page_logic
 
@@ -12,6 +13,8 @@ class MainWindow(QMainWindow, module_main_page_logic):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.__connect()
+        # 去掉标题栏
+        self.setWindowFlag(Qt.FramelessWindowHint)
 
     def __connect(self):
         self.pushButton_main.clicked.connect(self.on_stack_control)
