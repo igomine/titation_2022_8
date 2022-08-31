@@ -195,9 +195,9 @@
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
-          <x>230</x>
-          <y>30</y>
-          <width>91</width>
+          <x>80</x>
+          <y>40</y>
+          <width>241</width>
           <height>41</height>
          </rect>
         </property>
@@ -207,7 +207,20 @@
          </font>
         </property>
         <property name="text">
-         <string>主页</string>
+         <string>当前传感器读数</string>
+        </property>
+       </widget>
+       <widget class="QLCDNumber" name="lcdNumber">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>40</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Filled</enum>
         </property>
        </widget>
       </widget>

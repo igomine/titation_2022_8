@@ -7,6 +7,8 @@ import sys
 from PyQt5.Qt import *
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from module_main_page.module_main_page_logic import module_main_page_logic
+from module_main_page.thread_read_hx711 import ThreadReadHX711
+from globalFile import globalData
 
 
 class MainWindow(QMainWindow, module_main_page_logic):
@@ -15,6 +17,10 @@ class MainWindow(QMainWindow, module_main_page_logic):
         self.__connect()
         # 去掉标题栏
         self.setWindowFlag(Qt.FramelessWindowHint)
+        # 启动读取传感器线程
+        self.thread_read_hx711 = ThreadReadHX711(self)
+        globalData.flag_ThreadReadHX711Running = True
+        self.thread_read_hx711.start()
 
     def __connect(self):
         self.pushButton_main.clicked.connect(self.on_stack_control)
